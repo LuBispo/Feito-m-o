@@ -1,0 +1,182 @@
+  :root{
+    --cream:#FBF4EA;
+    --cream-2:#F5EBDC;
+    --cocoa:#4A2E22;
+    --cocoa-soft:#6B4A38;
+    --rose:#D9838C;
+    --rose-dark:#C06670;
+    --sage:#7E9A6D;
+    --sage-dark:#647C55;
+    --mustard:#DFA23D;
+    --paper:#FFFDF8;
+    --line: rgba(74,46,34,0.18);
+    box-sizing:border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  *{box-sizing:inherit;}
+  html{scroll-padding-top: env(safe-area-inset-top, 0px); scroll-behavior:smooth;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--cream);
+    color:var(--cocoa);
+    font-family:'Nunito Sans', system-ui, sans-serif;
+    font-size:17px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --cream:#241a15; --cream-2:#2c2019; --paper:#2f231c;
+      --cocoa:#F3E7DD; --cocoa-soft:#D8C3B4; --line: rgba(243,231,221,0.18);
+    }
+  }
+  :root[data-theme="dark"]{
+    --cream:#241a15; --cream-2:#2c2019; --paper:#2f231c;
+    --cocoa:#F3E7DD; --cocoa-soft:#D8C3B4; --line: rgba(243,231,221,0.18);
+  }
+  img{max-width:100%;display:block;}
+  h1,h2,h3{font-family:'Baloo 2',sans-serif;font-weight:700;margin:0 0 .3em;color:var(--cocoa);}
+  a{color:inherit;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky; top:0; z-index:40;
+    background:rgba(251,244,234,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+  .headbar{
+    display:flex;flex-direction:column;align-items:center;
+    padding:18px 24px 0;max-width:1080px;margin:0 auto;
+  }
+  .headbar img{height:96px;width:auto;margin-bottom:14px;}
+  .headbar nav{
+    display:flex;gap:26px;font-size:.92rem;font-weight:700;
+    width:100%;justify-content:center;
+    border-top:1px solid var(--line);padding:14px 0 12px;
+  }
+  .headbar nav a{text-decoration:none;color:var(--cocoa-soft);border-bottom:2px solid transparent;padding-bottom:2px;}
+  .headbar nav a:hover{border-color:var(--rose);color:var(--cocoa);}
+  @media (max-width:640px){
+    .headbar img{height:74px;}
+    .headbar nav{gap:14px;flex-wrap:wrap;font-size:.82rem;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{padding:56px 24px 40px;text-align:center;position:relative;overflow:hidden;}
+  .hero::before, .hero::after{
+    content:"";position:absolute;width:220px;height:220px;border-radius:50%;
+    background:var(--rose);opacity:.14;filter:blur(2px);
+  }
+  .hero::before{top:-90px;left:-70px;}
+  .hero::after{bottom:-100px;right:-60px;background:var(--sage);opacity:.14;}
+  .hero h1{font-size:clamp(1.9rem,5vw,3rem);max-width:720px;margin:0 auto .4em;position:relative;}
+  .hero p.lead{max-width:520px;margin:0 auto 26px;color:var(--cocoa-soft);font-size:1.05rem;position:relative;}
+  .hero .tagline{
+    display:inline-block;font-family:'Baloo 2';font-weight:600;color:var(--sage-dark);
+    letter-spacing:.03em;margin-bottom:14px;font-size:.95rem;
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--rose);color:#fff;font-family:'Baloo 2';font-weight:600;
+    padding:13px 26px;border-radius:30px;text-decoration:none;font-size:1rem;
+    border:none;cursor:pointer;box-shadow:0 6px 0 var(--rose-dark);
+    transition:transform .12s ease;
+  }
+  .btn:active{transform:translateY(4px);box-shadow:0 2px 0 var(--rose-dark);}
+  .btn.ghost{background:transparent;color:var(--cocoa);border:2px solid var(--cocoa);box-shadow:none;padding:11px 24px;}
+  .hero-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;}
+
+  /* ---------- SECTION HEADERS ---------- */
+  .stitch{
+    border:none;border-top:2px dashed var(--line);margin:0;
+  }
+  section.material{padding:54px 0 10px;}
+  .mat-head{text-align:center;max-width:600px;margin:0 auto 36px;}
+  .mat-head .kicker{font-family:'Baloo 2';font-weight:600;font-size:.9rem;}
+  .mat-head h2{font-size:clamp(1.6rem,4vw,2.2rem);}
+  .mat-head p{color:var(--cocoa-soft);font-size:.98rem;}
+  section.biscuit .kicker{color:var(--rose-dark);}
+  section.feltro .kicker{color:var(--sage-dark);}
+
+  /* ---------- PRODUCT GRID ---------- */
+  .grid{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:34px 26px;padding-bottom:20px;
+  }
+  .card{
+    background:var(--paper);
+    border:2px dashed var(--line);
+    border-radius:14px;
+    padding:14px 14px 18px;
+    position:relative;
+  }
+  .card:nth-child(odd){transform:rotate(-1.1deg);}
+  .card:nth-child(even){transform:rotate(1deg);}
+  .card .tape{
+    position:absolute;top:-11px;left:50%;transform:translateX(-50%) rotate(-3deg);
+    width:64px;height:22px;background:var(--mustard);opacity:.55;border-radius:2px;
+  }
+  section.feltro .card .tape{background:var(--sage);opacity:.5;}
+  .card .ph{border-radius:8px;overflow:hidden;margin-bottom:12px;background:var(--cream-2);}
+  .card .ph img{width:100%;height:210px;object-fit:cover;}
+  .card h3{font-size:1.08rem;margin-bottom:.25em;}
+  .card p{font-size:.9rem;color:var(--cocoa-soft);margin:0 0 12px;min-height:3em;}
+  .card .tag{
+    display:inline-block;font-size:.72rem;font-weight:700;font-family:'Baloo 2';
+    background:var(--cream-2);color:var(--cocoa-soft);padding:3px 10px;border-radius:20px;margin-bottom:10px;
+  }
+  .card .order{
+    display:inline-flex;align-items:center;gap:6px;font-family:'Baloo 2';font-weight:600;
+    font-size:.88rem;color:var(--rose-dark);background:none;border:none;cursor:pointer;padding:0;
+  }
+  section.feltro .card .order{color:var(--sage-dark);}
+  .card .order svg{width:16px;height:16px;}
+
+  /* ---------- FEATURED KIT ---------- */
+  .kit{
+    max-width:1080px;margin:64px auto;padding:0 24px;
+    display:grid;grid-template-columns:1.05fr 1fr;gap:36px;align-items:center;
+  }
+  .kit .ph{border-radius:16px;overflow:hidden;box-shadow:0 14px 30px rgba(74,46,34,.18);}
+  .kit .kicker{font-family:'Baloo 2';color:var(--rose-dark);font-weight:600;font-size:.9rem;}
+  .kit h2{font-size:clamp(1.5rem,4vw,2rem);}
+  .kit .price{font-family:'Baloo 2';font-size:1.7rem;color:var(--cocoa);margin:10px 0 18px;}
+  .kit .price span{font-size:.9rem;color:var(--cocoa-soft);font-family:'Nunito Sans';font-weight:700;}
+  @media (max-width:760px){ .kit{grid-template-columns:1fr;} }
+
+  /* ---------- RULES TICKET ---------- */
+  .rules-wrap{padding:20px 24px 70px;}
+  .ticket{
+    max-width:640px;margin:0 auto;background:var(--paper);border-radius:16px;
+    border:2px dashed var(--line);padding:34px 30px;text-align:center;
+    position:relative;
+  }
+  .ticket h2{font-size:1.5rem;}
+  .ticket ul{list-style:none;padding:0;margin:22px 0;text-align:left;max-width:420px;margin-inline:auto;}
+  .ticket li{display:flex;gap:10px;margin-bottom:13px;font-size:.96rem;}
+  .ticket li b{color:var(--cocoa);}
+  .ticket li::before{content:"✓";color:var(--sage-dark);font-weight:800;flex:0 0 auto;}
+  .ticket .warn{font-size:.85rem;color:var(--rose-dark);margin-top:6px;}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--cocoa);color:var(--cream);padding:40px 24px 30px;text-align:center;}
+  footer .brand{font-family:'Baloo 2';font-size:1.2rem;margin-bottom:6px;}
+  footer .links{display:flex;gap:22px;justify-content:center;margin:16px 0;flex-wrap:wrap;font-weight:700;}
+  footer .links a{text-decoration:none;color:var(--cream);opacity:.9;}
+  footer .links a:hover{opacity:1;text-decoration:underline;}
+  footer .note{font-size:.82rem;opacity:.7;margin-top:18px;}
+
+  /* ---------- FLOATING WHATSAPP ---------- */
+  .float-wa{
+    position:fixed; right:18px; bottom:calc(18px + env(safe-area-inset-bottom,0px));
+    width:56px;height:56px;border-radius:50%;background:var(--sage-dark);
+    display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(0,0,0,.25);
+    z-index:50;border:none;cursor:pointer;
+  }
+  .float-wa svg{width:28px;height:28px;fill:#fff;}
+
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} }
