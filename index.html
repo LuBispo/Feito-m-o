@@ -14,15 +14,16 @@
 <header>
   <div class="headbar">
     <img src="images/cabecalho.png" alt="Feito a Mão — Feltro e Biscuit">
+    <nav>
+      <a href="#biscuit">Biscuit</a>
+      <a href="#feltro">Feltro</a>
+      <a href="#kit">Kit Festa</a>
+      <a href="#encomendas">Encomendas</a>
+    </nav>
   </div>
 </header>
 
-<nav class="nav-fixa">
-  <a href="#biscuit">Biscuit</a>
-  <a href="#feltro">Feltro</a>
-  <a href="#kit">Kit Festa</a>
-  <a href="#encomendas">Encomendas</a>
-</nav>
+<noscript><p style="text-align:center;padding:24px">Ative o JavaScript para ver o catálogo, ou chame direto no <a href="https://wa.me/5571983515827">WhatsApp</a>.</p></noscript>
 
 <section class="hero">
   <div class="wrap">
@@ -30,7 +31,7 @@
     <h1>Cada detalhe é pensado pra virar um presente inesquecível</h1>
     <p class="lead">Canetas, bonequinhas, potes e retratos personalizados em biscuit e feltro — combinados com você e entregues com todo carinho.</p>
     <div class="hero-actions">
-      <button class="btn" onclick="pedir('um orçamento')">Chamar no WhatsApp</button>
+      <button class="btn" type="button" data-pedir="um orçamento">Chamar no WhatsApp</button>
       <a class="btn ghost" href="https://instagram.com/feitooamaoart" target="_blank" rel="noopener">Ver no Instagram</a>
     </div>
   </div>
@@ -45,50 +46,7 @@
       <h2>Modelados à mão, um a um</h2>
       <p>Canetas, porta-objetos e retratos esculpidos em biscuit, com acabamento pintado à mão.</p>
     </div>
-    <div class="grid">
-
-      <div class="card">
-        <div class="tape"></div>
-        <div class="ph"><img src="images/p1.jpg" alt="Porta-canetas em biscuit com ursinhos no tronco"></div>
-        <h3>Porta-canetas Tronco Encantado</h3>
-        <p>Tronco de madeira com ursinhos, passarinho e florzinhas em biscuit. Uma peça só, pronta pra alegrar a mesa.</p>
-        <button class="order" onclick="pedir('o Porta-canetas Tronco Encantado')">Fazer pedido →</button>
-      </div>
-
-      <div class="card">
-        <div class="tape"></div>
-        <div class="ph"><img src="images/p2.jpg" alt="Caneta personalizada coelhinha em biscuit"></div>
-        <h3>Caneta Coelhinha</h3>
-        <p>Topper de coelhinha em biscuit sobre caneta esferográfica. Fofura garantida pro estojo.</p>
-        <button class="order" onclick="pedir('a Caneta Coelhinha')">Fazer pedido →</button>
-      </div>
-
-      <div class="card">
-        <div class="tape"></div>
-        <div class="ph"><img src="images/p4.jpg" alt="Canetas personalizadas tema professora em biscuit"></div>
-        <h3>Canetas Professora</h3>
-        <p>Dupla com jaleco, maçã e fita métrica em biscuit. Presente certeiro pra quem ensina.</p>
-        <button class="order" onclick="pedir('as Canetas Professora')">Fazer pedido →</button>
-      </div>
-
-      <div class="card">
-        <div class="tape"></div>
-        <div class="ph"><img src="images/p6.jpg" alt="Caneta personalizada tema enfermeira em biscuit"></div>
-        <h3>Caneta da Área da Saúde</h3>
-        <p>Jaleco e estetoscópio em biscuit, pra homenagear quem cuida das pessoas.</p>
-        <button class="order" onclick="pedir('a Caneta da Área da Saúde')">Fazer pedido →</button>
-      </div>
-
-      <div class="card">
-        <div class="tape"></div>
-        <div class="ph"><img src="images/p3.jpg" alt="Reprodução de retrato em biscuit de duas irmãs"></div>
-        <h3>Retrato em Biscuit</h3>
-        <span class="tag">sob encomenda</span>
-        <p>Envie uma foto e ganhe bonequinhos com o mesmo rosto, roupa e penteado. Perfeito pra guardar um momento.</p>
-        <button class="order" onclick="pedir('um Retrato Personalizado em Biscuit')">Fazer pedido →</button>
-      </div>
-
-    </div>
+    <div class="grid" id="grid-biscuit"></div>
   </div>
 </section>
 
@@ -101,48 +59,13 @@
       <h2>Costuradas com carinho</h2>
       <p>Bonecas e bichinhos em feltro, cheios de detalhes bordados à mão.</p>
     </div>
-    <div class="grid">
-
-      <div class="card">
-        <div class="tape"></div>
-        <div class="ph"><img src="images/p5.jpg" alt="Boneca de feltro com vestido rosa florido"></div>
-        <h3>Boneca de Feltro — Jardim Rosa</h3>
-        <p>Cabelo cacheado, avental de florzinhas e bolsinha combinando. Todinha costurada à mão.</p>
-        <button class="order" onclick="pedir('a Boneca de Feltro Jardim Rosa')">Fazer pedido →</button>
-      </div>
-
-      <div class="card">
-        <div class="tape"></div>
-        <div class="ph"><img src="images/p7.jpg" alt="Boneca de feltro com laços florais"></div>
-        <h3>Boneca de Feltro — Laços de Margarida</h3>
-        <p>Maria-chiquinhas, laços florais e bolsinha de margarida. Uma companheira cheia de charme.</p>
-        <button class="order" onclick="pedir('a Boneca de Feltro Laços de Margarida')">Fazer pedido →</button>
-      </div>
-
-      <div class="card">
-        <div class="tape"></div>
-        <div class="ph"><img src="images/p10.jpg" alt="Trio de dinossauros de feltro"></div>
-        <h3>Trio de Dinossauros</h3>
-        <p>Kit com três dinossauros de feltro — azul, verde e amarelo — fofos e macios.</p>
-        <button class="order" onclick="pedir('o Trio de Dinossauros de Feltro')">Fazer pedido →</button>
-      </div>
-
-    </div>
+    <div class="grid" id="grid-feltro"></div>
   </div>
 </section>
 
 <hr class="stitch">
 
-<div class="kit" id="kit">
-  <div class="ph"><img src="images/kit_festa.jpg" alt="Kit Só um Bolinho: lembrancinhas de sereia em biscuit e vela personalizada"></div>
-  <div>
-    <div class="kicker">Kit para festas</div>
-    <h2>Kit Só um Bolinho</h2>
-    <p>10 lembrancinhas de sereia em biscuit + 1 vela personalizada com o nome do aniversariante. Perfeito pra tornar o dia ainda mais especial.</p>
-    <div class="price">R$ 150,00 <span>kit completo</span></div>
-    <button class="btn" onclick="pedir('o Kit Só um Bolinho (tema sereia)')">Encomendar este kit</button>
-  </div>
-</div>
+<div class="kit" id="kit"></div>
 
 <div class="rules-wrap" id="encomendas">
   <div class="ticket">
@@ -154,7 +77,7 @@
     </ul>
     <p class="warn">Em caso de desistência, o sinal não é devolvido.</p>
     <br>
-    <button class="btn" onclick="pedir('uma encomenda personalizada')">Chamar no WhatsApp</button>
+    <button class="btn" type="button" data-pedir="uma encomenda personalizada">Chamar no WhatsApp</button>
   </div>
 </div>
 
@@ -168,10 +91,11 @@
   <div class="note">Página em construção — em breve, compra direto por aqui. Por ora, todo pedido fecha pelo WhatsApp 🧵</div>
 </footer>
 
-<button class="float-wa" onclick="pedir('um orçamento')" aria-label="Chamar no WhatsApp">
+<button class="float-wa" type="button" data-pedir="um orçamento" aria-label="Chamar no WhatsApp">
   <svg viewBox="0 0 32 32"><path d="M16.02 3C9.4 3 4 8.37 4 15c0 2.36.68 4.56 1.86 6.42L4 29l7.78-1.82A11.9 11.9 0 0 0 16.02 27C22.65 27 28 21.63 28 15S22.65 3 16.02 3zm0 21.8c-2.02 0-3.9-.58-5.5-1.58l-.4-.24-4.62 1.08 1.1-4.5-.26-.42A9.7 9.7 0 0 1 6.2 15c0-5.4 4.4-9.8 9.82-9.8 5.4 0 9.8 4.4 9.8 9.8s-4.4 9.8-9.8 9.8zm5.4-7.34c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.48-.5-.67-.5-.17 0-.37-.02-.57-.02-.2 0-.52.07-.8.37-.27.3-1.05 1.02-1.05 2.5s1.07 2.9 1.22 3.1c.15.2 2.1 3.22 5.1 4.5.71.3 1.27.49 1.7.62.72.23 1.37.2 1.88.12.57-.08 1.76-.72 2-1.4.25-.7.25-1.28.17-1.4-.07-.13-.27-.2-.57-.35z"/></svg>
 </button>
 
+<script src="js/products.js"></script>
 <script src="js/script.js"></script>
 
 </body>

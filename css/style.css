@@ -40,71 +40,30 @@
   a{color:inherit;}
   .wrap{max-width:1080px;margin:0 auto;padding:0 24px;}
 
-
   /* ---------- HEADER ---------- */
-header {
-  background: rgba(251, 244, 234, 0.92);
-  backdrop-filter: blur(6px);
-  padding-top: env(safe-area-inset-top, 0px);
-}
-
-.headbar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 18px 24px 12px;
-  max-width: 1080px;
-  margin: 0 auto;
-}
-
-.headbar img {
-  height: 160px;
-  width: auto;
-}
-
-/* ---------- NAV FIXA (STICKY) ---------- */
-.nav-fixa {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background-color: var(--cream);
-  display: flex;
-  gap: 26px;
-  font-size: .92rem;
-  font-weight: 700;
-  width: 100%;
-  justify-content: center;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  padding: 14px 0 12px;
-  text-align: center;
-}
-
-.nav-fixa a {
-  text-decoration: none;
-  color: var(--cocoa-soft);
-  border-bottom: 2px solid transparent;
-  padding-bottom: 2px;
-  font-size: 1.1rem;
-}
-
-.nav-fixa a:hover {
-  border-color: var(--rose);
-  color: var(--cocoa);
-}
-
-/* ---------- RESPONSIVO ---------- */
-@media (max-width: 640px) {
-  .headbar img {
-    height: 74px;
+  header{
+    position:sticky; top:0; z-index:40;
+    background:rgba(251,244,234,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+    padding-top: env(safe-area-inset-top, 0px);
   }
-  .nav-fixa {
-    gap: 14px;
-    flex-wrap: wrap;
-    font-size: .82rem;
+  .headbar{
+    display:flex;flex-direction:column;align-items:center;
+    padding:18px 24px 0;max-width:1080px;margin:0 auto;
   }
-}
-
+  .headbar img{height:96px;width:auto;margin-bottom:14px;}
+  .headbar nav{
+    display:flex;gap:26px;font-size:.92rem;font-weight:700;
+    width:100%;justify-content:center;
+    border-top:1px solid var(--line);padding:14px 0 12px;
+  }
+  .headbar nav a{text-decoration:none;color:var(--cocoa-soft);border-bottom:2px solid transparent;padding-bottom:2px;}
+  .headbar nav a:hover{border-color:var(--rose);color:var(--cocoa);}
+  @media (max-width:640px){
+    .headbar img{height:74px;}
+    .headbar nav{gap:14px;flex-wrap:wrap;font-size:.82rem;}
+  }
 
   /* ---------- HERO ---------- */
   .hero{padding:56px 24px 40px;text-align:center;position:relative;overflow:hidden;}
